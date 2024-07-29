@@ -1,10 +1,20 @@
 package ru.otus.homework
 
+import kotlin.random.Random
+
 fun main() {
-    val ints = arrayOf(1, 2, 3, 4, 5)
-    for (i in 0 until ints.size) {
-        println("index: $i, value: ${ints[i]}")
+    var x = 10
+    while (x > 0) { // Сначала проверяем условие, потом выполняем тело цикла
+        x--
     }
+
+    do { // Сначала выполняется тело цикла, потом проверяется условие
+        val y = retrieveData()
+    } while (y != null) // y не видна за пределами цикла
+}
+
+fun retrieveData(): String? {
+    return if (Random.nextBoolean()) "data" else null
 }
 
 fun joinStrings(a: String, b: String): String {
