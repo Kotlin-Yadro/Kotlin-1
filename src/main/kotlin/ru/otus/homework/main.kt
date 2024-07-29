@@ -1,14 +1,18 @@
 package ru.otus.homework
 
-import kotlin.random.Random
+enum class TestEnum {
+    HELLO,
+    WORLD
+}
 
 fun main() {
-    var a: String = "Hello"
-    when(Random.nextInt(0, 5)) {
-        0 -> a = "Hello"
-        in 3 .. 4 -> a = "World"
+    // r может принимать значения только из TestEnum
+    val r: TestEnum = TestEnum.entries.random()
+    // when знает обо всех значениях TestEnum
+    var a: String = when (r) {
+        TestEnum.HELLO -> "Hello"
+        TestEnum.WORLD -> "World"
     }
-    println(a)
 }
 
 fun joinStrings(a: String, b: String): String {
