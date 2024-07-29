@@ -1,15 +1,12 @@
 package ru.otus.homework
 
 fun main() {
-    val a: Int = 1             // Сразу указываем тип
-    val b = 2                  // Тип `Int` угадывается из контекста
-    val c: Int                 // Тип `Int` необходимо указать при отложенном присваивании
-    c = 3                      // Отложенное присваивание
-    val d = sum(a, b)          // Вызов функции и присваивание результата
-    val (e, f) = arrayOf(5, 6) // Деструктуризация массива
+    val a1 = arrayOf(1, 2, 3, 4, 5)   // Создание массива из 5 произвольных элементов
+    println("Array size: " + a1.size) // Array size: 5
+    println("Element 0: " + a1[0])    // Element 0: 1
+    a1[0] = 100                       // Изменение элемента массива
+    println("Element 0: " + a1[0])    // Element 0: 100
 }
-
-fun sum(a: Int, b: Int): Int = a + b
 
 fun joinStrings(a: String, b: String): String {
     return a + b
