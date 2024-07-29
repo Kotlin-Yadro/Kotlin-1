@@ -1,17 +1,9 @@
 package ru.otus.homework
 
-enum class TestEnum {
-    HELLO,
-    WORLD
-}
-
 fun main() {
-    // r может принимать значения только из TestEnum
-    val r: TestEnum = TestEnum.entries.random()
-    // when знает обо всех значениях TestEnum
-    var a: String = when (r) {
-        TestEnum.HELLO -> "Hello"
-        TestEnum.WORLD -> "World"
+    val ints = arrayOf(1, 2, 3, 4, 5)
+    for (i: Int in ints) { // Перебор массива
+        println(i)         // Вывод элемента массива
     }
 }
 
