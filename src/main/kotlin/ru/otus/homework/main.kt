@@ -1,19 +1,14 @@
 package ru.otus.homework
 
-fun main() {
-    var a = 1
-    if (true) { // if-else - это управляющая констукция
-        a = 2
-    } else {
-        println("This will never be printed")
-    }
-    a = max(5, 3)
-}
+import kotlin.random.Random
 
-fun max(a: Int, b: Int): Int {
-    val max = if (a > b) a else b // if-else - это выражение
-    println("Max of $a and $b is $max")
-    return max
+fun main() {
+    val a: String = when(Random.nextInt(0, 5)) {
+        0 -> "Hello"
+        1, 2, 3 -> "World"
+        else -> "!"
+    }
+    println(a)
 }
 
 fun joinStrings(a: String, b: String): String {
