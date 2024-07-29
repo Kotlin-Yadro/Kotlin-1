@@ -1,5 +1,6 @@
 package ru.otus.homework
 
-fun main(args: Array<String>) {
-    println("My args: ${args.joinToString()}")
+fun main() {
+    println("From Vasya: ${ru.otus.homework.vasya.MyClass()}")
+    println("From Petya: ${ru.otus.homework.petya.MyClass()}")
 }
