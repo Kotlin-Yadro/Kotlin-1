@@ -12,11 +12,11 @@ fun main() {
         while (y > 0) {
             y--
             if (Random.nextBoolean()) {
-                break@loop1 // Прерывание по метке loop1
+                continue@loop1 // Продолжение по метке loop1
             }
         }
     }
-    println("x = $x, y = $y") // x = 9, y = 8
+    println("x = $x, y = $y") // x = 0, y = 7
 }
 
 
