@@ -1,5 +1,5 @@
 package ru.otus.homework
 
-fun main() {
-    println("Hello, World!")
+fun main(args: Array<String>) {
+    println("My args: ${args.joinToString()}")
 }
