@@ -1,22 +1,19 @@
 package ru.otus.homework
 
-import kotlin.random.Random
-
 fun main() {
-    var x = 10
-    var y: Int = -1
+    println(sumOrThrow(-1, -2)) // IllegalArgumentException: Only positive numbers are allowed
+    println(sumOrThrow(Int.MAX_VALUE, Int.MAX_VALUE)) // IllegalStateException: Sum overflow
+}
 
-    loop1@ while (x > 0) { // Метка loop1
-        x--
-        y = 10
-        while (y > 0) {
-            y--
-            if (Random.nextBoolean()) {
-                continue@loop1 // Продолжение по метке loop1
-            }
-        }
+fun sumOrThrow(a: Int, b: Int): Int {
+    if (a < 0 || b < 0) {
+        throw IllegalArgumentException("Only positive numbers are allowed")
     }
-    println("x = $x, y = $y") // x = 0, y = 7
+    val sum = a + b
+    if (sum < 0) {
+        throw IllegalStateException("Sum overflow")
+    }
+    return sum
 }
 
 
